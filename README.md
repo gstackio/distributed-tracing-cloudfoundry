@@ -17,6 +17,8 @@ Run:
 
 # Running the apps locally with RabbitMQ
 
+You need to have Docker installed.
+
 Provide the env variable `DEFAULT_HEALTH_HOST` pointing to your Docker Machine. By default it will be `localhost`.
 That way we'll start a RabbitMQ instance for you.
 
