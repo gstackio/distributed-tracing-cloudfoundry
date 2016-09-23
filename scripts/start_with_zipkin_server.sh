@@ -22,7 +22,7 @@ echo -e "\nStarting Zipkin Server..."
 nohup $JAVA_HOME/bin/java $DEFAULT_ARGS $MEM_ARGS -jar zipkin-server/build/libs/*.jar > build/zipkin-server.log &
 
 echo -e "\nStarting the apps..."
-nohup $JAVA_HOME/bin/java $DEFAULT_ARGS $MEM_ARGS -jar service1/build/libs/*.jar > build/service1.log &
-nohup $JAVA_HOME/bin/java $DEFAULT_ARGS $MEM_ARGS -jar service2/build/libs/*.jar > build/service2.log &
-nohup $JAVA_HOME/bin/java $DEFAULT_ARGS $MEM_ARGS -jar service3/build/libs/*.jar > build/service3.log &
-nohup $JAVA_HOME/bin/java $DEFAULT_ARGS $MEM_ARGS -jar service4/build/libs/*.jar > build/service4.log &
+nohup $JAVA_HOME/bin/java $DEFAULT_ARGS $MEM_ARGS -jar acme-financial-account-microservice/build/libs/*.jar > build/acme-financial-account-microservice.log &
+nohup $JAVA_HOME/bin/java $DEFAULT_ARGS $MEM_ARGS -jar acme-financial-back-office-microservice/build/libs/*.jar > build/acme-financial-back-office-microservice.log &
+nohup $JAVA_HOME/bin/java $DEFAULT_ARGS $MEM_ARGS -jar acme-financial-customer-microservice/build/libs/*.jar > build/acme-financial-customer-microservice.log &
+nohup $JAVA_HOME/bin/java $DEFAULT_ARGS $MEM_ARGS -jar acme-financial-ui/build/libs/*.jar > build/acme-financial-ui.log &
