@@ -36,3 +36,7 @@ Run:
 ```
 
 You can then navigate to http://localhost:9411/ to see the Zipkin dashboard.
+
+# Troubleshooting
+
+You can tail the .log files in build/ to see what it happening.
