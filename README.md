@@ -25,3 +25,12 @@ Run:
 ```
 ./scripts/start_with_zipkin_server.sh
 ```
+
+# Interactions
+
+Run:
+```
+./scripts/curl_start.sh
+```
+
+You can then navigate to http://localhost:9411/ to see the Zipkin dashboard.
