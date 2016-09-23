@@ -19,10 +19,10 @@ docker-compose build
 docker-compose up -d
 
 echo -e "\nStarting Zipkin Server..."
-nohup $JAVA_HOME/bin/java $DEFAULT_ARGS $MEM_ARGS -jar zipkin-server/build/libs/*.jar > build/zipkin-server.log &
+nohup java $DEFAULT_ARGS $MEM_ARGS -jar zipkin-server/build/libs/*.jar > build/zipkin-server.log &
 
 echo -e "\nStarting the apps..."
-nohup $JAVA_HOME/bin/java $DEFAULT_ARGS $MEM_ARGS -jar acme-financial-account-microservice/build/libs/*.jar > build/acme-financial-account-microservice.log &
-nohup $JAVA_HOME/bin/java $DEFAULT_ARGS $MEM_ARGS -jar acme-financial-back-office-microservice/build/libs/*.jar > build/acme-financial-back-office-microservice.log &
-nohup $JAVA_HOME/bin/java $DEFAULT_ARGS $MEM_ARGS -jar acme-financial-customer-microservice/build/libs/*.jar > build/acme-financial-customer-microservice.log &
-nohup $JAVA_HOME/bin/java $DEFAULT_ARGS $MEM_ARGS -jar acme-financial-ui/build/libs/*.jar > build/acme-financial-ui.log &
+nohup java $DEFAULT_ARGS $MEM_ARGS -jar acme-financial-account-microservice/build/libs/*.jar > build/acme-financial-account-microservice.log &
+nohup java $DEFAULT_ARGS $MEM_ARGS -jar acme-financial-back-office-microservice/build/libs/*.jar > build/acme-financial-back-office-microservice.log &
+nohup java $DEFAULT_ARGS $MEM_ARGS -jar acme-financial-customer-microservice/build/libs/*.jar > build/acme-financial-customer-microservice.log &
+nohup java $DEFAULT_ARGS $MEM_ARGS -jar acme-financial-ui/build/libs/*.jar > build/acme-financial-ui.log &
