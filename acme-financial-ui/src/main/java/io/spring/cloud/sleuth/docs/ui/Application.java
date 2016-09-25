@@ -39,11 +39,7 @@ public class Application {
 		Span span = null;
 		try {
 			log.info("Welcome To Acme Financial. Calling Acme Financial's Back Office Microservice");
-			span = tracer.createSpan("callingBackOfficeMicroService_span");
-			span.logEvent("call_backOfficeMicroService");
 			String response = restTemplate.getForObject("http://" + backOfficeMicroServiceAddress + "/action", String.class);
-			span.logEvent("response_received_backOfficeMicroService");
-			tracer.addTag("ui","success");
 			log.info("Got response from Acme Financial's Back Office Microservice [{}]", response);
 			return response;
 		}finally {
