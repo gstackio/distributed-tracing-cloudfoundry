@@ -1,7 +1,7 @@
 server.port: 8081
 spring:
   application:
-    name: acme-financial-ui
+    name: ui
   sleuth:
     sampler:
       percentage: 1.0

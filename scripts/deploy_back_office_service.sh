@@ -3,5 +3,5 @@
 set -e
 
 pushd acme-financial-back-office-microservice
-cf push &
+cf push
 popd

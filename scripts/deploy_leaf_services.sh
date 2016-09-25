@@ -8,3 +8,5 @@ popd
 pushd acme-financial-customer-microservice
 cf push &
 popd
+
+wait

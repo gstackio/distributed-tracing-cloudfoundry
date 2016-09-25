@@ -9,5 +9,5 @@ applications:
     - zipkin_span_stream
   env:
     DEBUG: "true"
-    ACCOUNTMICROSERVICE_ADDRESS: acme-financial-account-microservice-uncascaded-azotobacter.cfapps.io
-    CUSTOMERMICROSERVICE_ADDRESS: acme-financial-customer-microservice-cryptoclastic-smolt.cfapps.io
+    ACCOUNTMICROSERVICE_ADDRESS: acme-financial-account-microservice-uncancellable-sycosis.cfapps.io
+    CUSTOMERMICROSERVICE_ADDRESS: acme-financial-customer-microservice-unmouthed-precontract.cfapps.io

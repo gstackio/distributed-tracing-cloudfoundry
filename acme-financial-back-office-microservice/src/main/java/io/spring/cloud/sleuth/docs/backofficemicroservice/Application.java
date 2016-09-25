@@ -22,6 +22,7 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import java.io.IOException;
 import java.lang.invoke.MethodHandles;
+import java.util.Random;
 
 import static com.github.tomakehurst.wiremock.client.WireMock.*;
 
@@ -41,6 +42,7 @@ public class Application {
 
 	WireMock wireMock = new WireMock(MOCK_PORT);
 	WireMockServer wireMockServer = new WireMockServer(MOCK_PORT);
+	private final Random random = new Random();
 
 	@PostConstruct
 	public void setup() {
@@ -63,10 +65,12 @@ public class Application {
 	@RequestMapping("/action")
 	public String backOfficeMicroServiceController() throws InterruptedException {
 		log.info("Hello from Acme Financial's Backend service. Calling Acme Financial's Account Microservice and then Customer Microservice");
+		Thread.sleep(random.nextInt(1000));
 		String accountMicroservice = restTemplate.getForObject("http://" + accountMicroserviceAddress + "/action", String.class);
 		log.info("Got response from Acme Financial's Account Service [{}]", accountMicroservice);
 		String customerMicroService = restTemplate.getForObject("http://" + customerMicroServiceAddress + "/action", String.class);
 		log.info("Got response from Acme Financial's Customer Service [{}]", customerMicroService);
+
 		return String.format("Hello from Acme Financial's Backend service. Calling Acme Financial's Account Service [%s] and then Customer Service [%s]", accountMicroservice, customerMicroService);
 	}
 

@@ -9,4 +9,4 @@ applications:
     - zipkin_span_stream
   env:
     DEBUG: "true"
-    BACKOFFICEMICROSERVICE_ADDRESS: acme-financial-back-office-microservice-suboral-tortricid.cfapps.io
+    BACKOFFICEMICROSERVICE_ADDRESS: acme-financial-back-office-microservice-manneristic-scimitar.cfapps.io

@@ -11,6 +11,8 @@ The apps are sending spans to Zipkin via RabbitMQ and `spring-cloud-sleuth-strea
 
 1. Confirm the org and space you are logged into. The apps will be deployed here.
 
+1. `./scripts/create_services.sh`
+
 1. `./scripts/build.sh && ./scripts/deploy_leaf_services.sh`
 
 1. Look up the route for each leaf service via `cf apps` and put them into `scripts/deploy_back_office_service.sh`
@@ -32,14 +34,6 @@ Hello from Acme Financial's Backend service. Calling Acme Financial's Account Se
 1. Confirm that the Zipkin UI is working via a browser using the URL from `cf apps`
 
 
-
-# Running acceptance tests of CF
-
-Run:
-
-```
-./runAcceptanceTests.sh
-```
 
 # Running the apps locally with RabbitMQ
 

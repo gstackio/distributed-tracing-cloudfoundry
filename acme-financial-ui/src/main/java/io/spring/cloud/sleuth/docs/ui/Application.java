@@ -41,9 +41,6 @@ public class Application {
 			log.info("Welcome To Acme Financial. Calling Acme Financial's Back Office Microservice");
 			span = tracer.createSpan("callingBackOfficeMicroService_span");
 			span.logEvent("call_backOfficeMicroService");
-			span.logEvent("start_sleep_event");
-			Thread.sleep(2000);
-			span.logEvent("end_sleep_event");
 			String response = restTemplate.getForObject("http://" + backOfficeMicroServiceAddress + "/action", String.class);
 			span.logEvent("response_received_backOfficeMicroService");
 			tracer.addTag("ui","success");
