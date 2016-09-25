@@ -34,8 +34,8 @@ public class Application {
 		return "Front Page";
 	}
 
-	@RequestMapping("/velocitystart")
-	public String velocitystart() throws InterruptedException {
+	@RequestMapping("/start")
+	public String start() throws InterruptedException {
 		Span span = null;
 		try {
 			log.info("Welcome To Acme Financial. Calling Acme Financial's Back Office Microservice");
@@ -44,7 +44,7 @@ public class Application {
 			span.logEvent("start_sleep_event");
 			Thread.sleep(2000);
 			span.logEvent("end_sleep_event");
-			String response = restTemplate.getForObject("http://" + backOfficeMicroServiceAddress + "/startOfBackOffice-Service", String.class);
+			String response = restTemplate.getForObject("http://" + backOfficeMicroServiceAddress + "/action", String.class);
 			span.logEvent("response_received_backOfficeMicroService");
 			tracer.addTag("ui","success");
 			log.info("Got response from Acme Financial's Back Office Microservice [{}]", response);
@@ -52,26 +52,6 @@ public class Application {
 		}finally {
 			tracer.close(span);
 		}
-	}
-
-
-	@RequestMapping("/springonestart")
-	public String springonestart() throws InterruptedException {
-
-		Span span = null;
-		try {
-			log.error("something went wrong");
-			span = tracer.createSpan("call_backofficemicroservice");
-			String response = null;
-			if(response == null) {
-				span.logEvent("call_backofficemicroservice_failed");
-				tracer.addTag("ui","error");
-			}
-			return "wrong conference, please check reshmi's sanity!!!!";
-		} finally {
-			tracer.close(span);
-		}
-
 	}
 
 	@RequestMapping("/readtimeout")

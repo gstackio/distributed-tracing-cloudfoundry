@@ -1,13 +1,12 @@
 ---
 applications:
-- name: docssleuth-zipkin-server
+- name: zipkin-server
   memory: 512M
   instances: 1
-  host: docssleuth-zipkin-server
+  random-route: true
   path: build/libs/zipkin-server-1.0.0.jar
   services:
-    - docssleuth-rabbitmq
-    - docssleuth-mysql
+    - zipkin_span_stream
+    - zipkin_mysql
   env:
-    SPRING_PROFILES_ACTIVE: cloud
     DEBUG: "true"

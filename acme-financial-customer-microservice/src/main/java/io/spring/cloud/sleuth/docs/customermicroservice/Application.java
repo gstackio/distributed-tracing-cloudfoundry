@@ -16,7 +16,7 @@ public class Application {
 	private static final Logger log = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
 
-	@RequestMapping("/startOfCustomer-Microservice")
+	@RequestMapping("/action")
 	public String customerMicroServiceController() throws InterruptedException {
 		log.info("Hello from Acme's Customer Microservice");
 		return "Hello from Acme's Customer Microservice";

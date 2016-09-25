@@ -3,12 +3,11 @@ applications:
 - name: acme-financial-back-office-microservice
   memory: 512M
   instances: 1
-  host: acme-financial-back-office-microservice-12
+  random-route: true
   path: build/libs/acme-financial-back-office-microservice-1.0.0.jar
   services:
-    - rabbitmq_stream
+    - zipkin_span_stream
   env:
-    SPRING_PROFILES_ACTIVE: cloud
     DEBUG: "true"
-    SERVICE3_ADDRESS: acme-financial-account-microservice-12.cfapps.io
-    SERVICE4_ADDRESS: acme-financial-customer-microservice-12.cfapps.io
+    ACCOUNTMICROSERVICE_ADDRESS: acme-financial-account-microservice-uncascaded-azotobacter.cfapps.io
+    CUSTOMERMICROSERVICE_ADDRESS: acme-financial-customer-microservice-cryptoclastic-smolt.cfapps.io

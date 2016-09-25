@@ -8,10 +8,9 @@ DEFAULT_ARGS="-DSPRING_RABBITMQ_HOST=${DEFAULT_HEALTH_HOST} -DSPRING_RABBITMQ_PO
 
 [[ -z "${MEM_ARGS}" ]] && MEM_ARGS="-Xmx128m -Xss1024k"
 
-mkdir -p build
+mkdir -p logs
 
-# build apps
-./gradlew clean build --parallel
+./scripts/build.sh
 
 # run zipkin stuff
 docker-compose kill

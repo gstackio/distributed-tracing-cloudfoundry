@@ -14,5 +14,3 @@ spring:
 zipkin:
   store:
     type: mem
-
-logging.file: build/zipkin-server.log

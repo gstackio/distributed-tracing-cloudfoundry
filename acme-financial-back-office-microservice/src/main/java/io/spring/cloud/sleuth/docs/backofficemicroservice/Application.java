@@ -60,12 +60,12 @@ public class Application {
 		return "Front Page";
 	}
 
-	@RequestMapping("/startOfBackOffice-Service")
+	@RequestMapping("/action")
 	public String backOfficeMicroServiceController() throws InterruptedException {
 		log.info("Hello from Acme Financial's Backend service. Calling Acme Financial's Account Microservice and then Customer Microservice");
-		String accountMicroservice = restTemplate.getForObject("http://" + accountMicroserviceAddress + "/startOfAccount-Microservice", String.class);
+		String accountMicroservice = restTemplate.getForObject("http://" + accountMicroserviceAddress + "/action", String.class);
 		log.info("Got response from Acme Financial's Account Service [{}]", accountMicroservice);
-		String customerMicroService = restTemplate.getForObject("http://" + customerMicroServiceAddress + "/startOfCustomer-Microservice", String.class);
+		String customerMicroService = restTemplate.getForObject("http://" + customerMicroServiceAddress + "/action", String.class);
 		log.info("Got response from Acme Financial's Customer Service [{}]", customerMicroService);
 		return String.format("Hello from Acme Financial's Backend service. Calling Acme Financial's Account Service [%s] and then Customer Service [%s]", accountMicroservice, customerMicroService);
 	}
