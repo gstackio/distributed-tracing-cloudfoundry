@@ -70,7 +70,7 @@ public class Application {
 		log.info("Got response from Acme Financial's Account Service [{}]", accountMicroservice);
 		String customerMicroService = restTemplate.getForObject("http://" + customerMicroServiceAddress + "/action", String.class);
 		log.info("Got response from Acme Financial's Customer Service [{}]", customerMicroService);
-
+		Thread.sleep(random.nextInt(1000));
 		return String.format("Hello from Acme Financial's Backend service. Calling Acme Financial's Account Service [%s] and then Customer Service [%s]", accountMicroservice, customerMicroService);
 	}
 
