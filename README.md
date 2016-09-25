@@ -15,11 +15,11 @@ The apps are sending spans to Zipkin via RabbitMQ and `spring-cloud-sleuth-strea
 
 1. `./scripts/build.sh && ./scripts/deploy_leaf_services.sh`
 
-1. Look up the route for each leaf service via `cf apps` and put them into `scripts/deploy_back_office_service.sh`
+1. Look up the route for each leaf service via `cf apps` and put them into `acme-financial-back-office-microservice/manifest.yml`
 
 1. `./scripts/deploy_back_office_service.sh`
 
-1. Look up the route for the back office service via `cf apps` and put it into `scripts/deploy_ui.sh`
+1. Look up the route for the back office service via `cf apps` and put it into `acme-financial-ui/manifest.yml`
 
 1. `./scripts/deploy_ui.sh`
 
